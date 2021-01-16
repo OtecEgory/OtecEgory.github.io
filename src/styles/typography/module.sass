@@ -25,15 +25,17 @@ section#categories h2
     font-size: 28px
 
 
-span
+div#item-content-header span
     color: $color-yellow
 
 
 div.item-group
     text-align: center
-    position: relative
-    z-index: 2
-    bottom: 150px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
 
     h6
         @include font-style-family

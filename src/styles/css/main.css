@@ -29,23 +29,25 @@ div#item-content-header button {
   color: #fcff19; }
 
 div.dropping-list-menu {
-  display: none;
   text-align: left;
   background: #fcff19;
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 10px;
   position: absolute;
-  right: 660px;
-  top: 60px;
+  left: 0;
+  top: 100%;
   z-index: 100;
   width: 220px;
-  height: 115px; }
+  opacity: 0;
+  transition: 0.2s;
+  pointer-events: none; }
   div.dropping-list-menu ul {
     margin: 0px;
-    padding-left: 13px; }
+    padding: 0px; }
   div.dropping-list-menu li {
     font-family: Roboto;
     margin: 0px;
     padding-top: 15px;
+    color: #000000 !important;
     font-weight: bold; }
 
 div#content-categories button {
@@ -143,9 +145,8 @@ section#header {
   background-size: cover; }
 
 div.container {
-  margin: auto;
-  padding: 0px 404px 0px 404px;
-  max-width: 1150px; }
+  margin: 0 auto;
+  max-width: 1200px; }
 
 div#menu-wrapper {
   display: flex;
@@ -156,11 +157,21 @@ div#menu-wrapper {
 ul.menu-list {
   display: flex; }
   ul.menu-list li {
-    padding-right: 36px;
+    margin-right: 36px;
     color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
     font-family: Roboto;
     font-weight: bold;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.2s; }
+    ul.menu-list li:first-child:hover {
+      background: #fcff19;
+      color: #000000; }
+      ul.menu-list li:first-child:hover div.dropping-list-menu {
+        opacity: 1;
+        pointer-events: auto; }
 
 div.item-menu {
   display: flex;
@@ -169,14 +180,19 @@ div.item-menu {
 
 div.container-header {
   margin: auto;
-  max-width: 1875px; }
+  max-width: 1875px;
+  position: relative;
+  height: 1000px; }
 
 div#header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 337px; }
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%); }
 
 section#categories {
   background-image: url("../../images/CATEGORIES_BG_IMAGE.png");
@@ -189,7 +205,7 @@ div.container-categories {
 
 div#content-categories {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding-bottom: 75px; }
 
@@ -211,13 +227,16 @@ div#item-collections {
   padding-bottom: 34px; }
 
 div#scroll-icon {
-  display: flex;
-  justify-content: center;
-  padding-top: 262px;
-  padding-bottom: 33px; }
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%); }
 
-div.item-wrap {
-  padding: 0px 15px 0px 15px; }
+div.item {
+  width: 32%;
+  position: relative; }
+  div.item img {
+    width: 100%; }
 
 div.item-pay {
   display: flex;
@@ -238,6 +257,9 @@ div#wrapper-form {
 
 section#footer {
   background: #fcff19; }
+  section#footer div.container {
+    display: flex;
+    justify-content: space-between; }
   section#footer ul {
     display: flex; }
     section#footer ul li {
@@ -247,29 +269,17 @@ section#footer {
       font-weight: bold; }
       section#footer ul li:nth-child(4) {
         padding-right: 0px; }
-  section#footer div.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    padding: 10px 404px 10px 404px; }
 
-@media screen and (max-device-width: 800px) {
-  div.container {
-    display: none; }
-  div.arrow-previous {
-    display: none; }
-  div.arrow-next {
-    display: none; }
+@media screen and (max-width: 800px) {
   div#content-categories {
-    display: flex;
     justify-content: center; }
-  div.container-popular-bikes {
-    display: none; }
-  div#form-contact-us {
-    display: none; }
-  section#footer div.container {
-    display: none; } }
+  div.item {
+    width: 80%;
+    margin-bottom: 15px; }
+  section#popular-bikes {
+    padding-top: 50px; }
+  div#item-collections {
+    justify-content: center; } }
 
 div#item-content-header {
   text-align: center; }
@@ -297,14 +307,16 @@ section#categories h2 {
   padding: 75px 0px 75px 0px;
   font-size: 28px; }
 
-span {
+div#item-content-header span {
   color: #fcff19; }
 
 div.item-group {
   text-align: center;
-  position: relative;
-  z-index: 2;
-  bottom: 150px; }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; }
   div.item-group h6 {
     font-family: Roboto;
     margin: 0px;

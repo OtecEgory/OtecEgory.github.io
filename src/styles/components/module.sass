@@ -13,24 +13,26 @@ div#item-content-header button
     color: $color-yellow
 
 div.dropping-list-menu
-    display: none
     text-align: left
     background: $color-yellow
-    border-radius: 10px
+    border-radius: 0px 10px 10px 10px
     position: absolute
-    right: 660px
-    top: 60px
+    left: 0
+    top: 100%
     z-index: 100
     width: 220px
-    height: 115px
-    
+    opacity: 0
+    transition: 0.2s
+    pointer-events: none
+
     ul
         margin: 0px
-        padding-left: 13px
+        padding: 0px
 
     li
         @include font-style-family
         padding-top: 15px
+        color: $color-black !important
         font-weight: bold
 
 

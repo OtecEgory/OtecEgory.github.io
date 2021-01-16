@@ -10,6 +10,11 @@ function styles(){
     .pipe(browserSync.stream());
 }
 
+// function script(){
+//   return gulp.src('./src/js/index.js')
+//   .pipe(browserSync.stream())
+// }
+
 function serve(){
   browserSync.init({
     server: {
@@ -18,6 +23,7 @@ function serve(){
   })
   gulp.watch("./src/styles/**/*.sass",gulp.series(styles));
   gulp.watch("./src/*.html").on('change', browserSync.reload)
+  gulp.watch("./src/js/*.js").on('change', browserSync.reload)
 }
 
 
