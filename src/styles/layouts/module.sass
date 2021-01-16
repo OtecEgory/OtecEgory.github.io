@@ -1,0 +1,167 @@
+body
+    margin: 0
+    padding: 0
+
+section#header
+    background-image: url('../../images/_PhotoFilter_.png')
+    background-repeat: no-repeat
+    background-size: cover
+
+div.container
+    margin: auto
+    padding: 0px 404px 0px 404px
+    max-width: 1150px
+
+
+div#menu-wrapper
+    @include flex-between
+    align-items: center
+    padding-top: 20px
+
+
+ul.menu-list
+    display: flex
+
+    li
+        padding-right: 36px
+        color: #FFFFFF
+        font-family: $font-roboto
+        font-weight: $font-bold
+        text-transform: uppercase
+
+
+div.item-menu
+    @include flex-center
+    align-items: center
+
+div.container-header
+    margin: auto
+    max-width: 1875px
+
+
+div#header-content
+    @include flex-between
+    align-items: center
+    flex-wrap: wrap
+    padding-top: 337px
+
+section#categories
+    background-image: url('../../images/CATEGORIES_BG_IMAGE.png')
+    background-repeat: no-repeat
+    background-size: cover
+
+div.container-categories
+    margin: auto
+    max-width: 1150px
+
+
+div#content-categories
+    @include flex-center
+    flex-wrap: wrap
+    padding-bottom: 75px
+
+div.container-popular-bikes
+    margin: auto
+    max-width: 1875px
+
+section#popular-bikes h2
+    text-align: center
+    text-transform: uppercase
+    font-family: $font-roboto
+    font-weight: bold
+    margin: 0px
+
+
+div#item-collections
+    @include flex-between
+    flex-wrap: wrap
+    padding-bottom: 34px
+
+
+div#scroll-icon
+    @include flex-center
+    padding-top: 262px
+    padding-bottom: 33px
+
+div.item-wrap
+    padding: 0px 15px 0px 15px
+
+
+div.item-pay
+    @include flex-between
+    align-items: center
+
+
+div.wrapper-option-and-btn
+    display: flex
+
+
+section#contact-us-block
+    background-image: url('../../images/CONTACT_US_BG.png')
+    background-repeat: no-repeat
+    background-size: cover
+
+
+div#wrapper-form
+    @include flex-center
+
+
+section#footer
+    background: $color-yellow
+
+    ul
+        display: flex
+
+        li
+            font-family: $font-roboto
+            padding-right: 36px
+            @include font-size-weight
+
+            &:nth-child(4)
+                padding-right: 0px
+                
+
+    div.container
+        @include flex-between
+        align-items: center
+        margin: auto
+        padding: 10px 404px 10px 404px
+
+
+
+// @media screen and (max-width: 800px)
+//     div.arrow-previous
+//         display: none
+
+//     div.arrow-next
+//         display: none
+
+//     div.container-categories
+//         @include flex-center
+
+
+@media screen and (max-device-width: 800px)
+
+    div.container
+        display: none
+
+    div.arrow-previous
+        display: none
+
+    div.arrow-next
+        display: none
+
+    div#content-categories
+        @include flex-center
+
+        div.item-wrap
+
+    div.container-popular-bikes
+        display: none
+
+    div#form-contact-us
+        display: none
+
+    section#footer div.container
+        display: none
+            
