@@ -14,6 +14,9 @@
 ul {
   list-style: none; }
 
+a {
+  text-decoration: none; }
+
 button {
   width: 123px;
   height: 43px;
@@ -21,7 +24,7 @@ button {
   text-transform: uppercase;
   font-size: 12px; }
 
-div#item-content-header button {
+div.item-content-header button {
   border-radius: 8px;
   background: #000000;
   border: 0px;
@@ -93,7 +96,6 @@ div#form-contact-us {
   flex-direction: column;
   text-align: center; }
   div#form-contact-us button {
-    width: 450px;
     height: 43px;
     margin-top: 21px;
     border-radius: 8px;
@@ -101,16 +103,16 @@ div#form-contact-us {
     background: #8f8f8f;
     color: #ffffff;
     font-family: Roboto;
-    margin-bottom: 84px; }
+    margin-bottom: 84px;
+    width: 100%; }
 
 div#wrap-name {
   display: flex;
-  justify-content: space-between; }
-  div#wrap-name input {
-    width: 191px; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
 
 div#form-contact-us input::after {
-  width: 100px; }
+  width: 100%; }
 
 input {
   height: 43px;
@@ -125,6 +127,7 @@ input {
 
 div#form-contact-us textarea {
   padding: 22px 0px 117px 22px;
+  resize: none;
   margin-top: 21px;
   border-radius: 8px;
   border: 1px solid #8f8f8f;
@@ -133,26 +136,34 @@ div#form-contact-us textarea {
   outline: none;
   font-family: Roboto;
   text-transform: uppercase;
-  font-style: italic; }
+  font-style: italic;
+  width: 100%; }
 
 body {
   margin: 0;
   padding: 0; }
-
-section#header {
-  background-image: url("../../images/PhotoFilter.png");
-  background-repeat: no-repeat;
-  background-size: cover; }
+  body * {
+    box-sizing: border-box; }
 
 div.container {
   margin: 0 auto;
-  max-width: 1200px; }
+  max-width: 1200px;
+  padding: 0px 15px; }
+
+div.swiper-container {
+  position: relative; }
+
+div.swiper-slide img {
+  height: 1000px; }
 
 div#menu-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 20px; }
+
+div.menu-burger {
+  display: none; }
 
 ul.menu-list {
   display: flex; }
@@ -180,19 +191,22 @@ div.item-menu {
 
 div.container-header {
   margin: auto;
-  max-width: 1875px;
-  position: relative;
-  height: 1000px; }
+  position: absolute;
+  z-index: 44;
+  height: 1000px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%; }
 
 div#header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   position: absolute;
   width: 100%;
   top: 50%;
-  transform: translateY(-50%); }
+  transform: translateY(-50%);
+  padding: 0px 15px; }
 
 section#categories {
   background-image: url("../../images/CATEGORIES_BG_IMAGE.png");
@@ -209,11 +223,15 @@ div#content-categories {
   flex-wrap: wrap;
   padding-bottom: 75px; }
 
+div.item-bike img.bike {
+  width: 100%; }
+
 div.container-popular-bikes {
   margin: auto;
   max-width: 1875px; }
 
-section#popular-bikes h2 {
+section#popular-bikes {
+  padding-top: 50px;
   text-align: center;
   text-transform: uppercase;
   font-family: Roboto;
@@ -228,7 +246,7 @@ div#item-collections {
 
 div#scroll-icon {
   position: absolute;
-  bottom: 30px;
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%); }
 
@@ -270,7 +288,89 @@ section#footer {
       section#footer ul li:nth-child(4) {
         padding-right: 0px; }
 
+div.mob-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 100%;
+  bottom: 0;
+  height: 100%;
+  padding: 30px;
+  background: #fff;
+  border-left: 1px solid #000;
+  width: 100%;
+  transition: 0.4s;
+  z-index: 100;
+  overflow: hidden; }
+
+div.mob-menu.show {
+  left: 0;
+  padding: 0;
+  background-color: #000000; }
+
+div.exit {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 20px 40px 0px; }
+  div.exit img {
+    width: 30px;
+    height: 30px; }
+
+nav.mob-menu-list a {
+  color: #fcff19;
+  font-family: Roboto;
+  font-family: Roboto;
+  margin: 0px;
+  font-size: 45px; }
+
+nav.mob-menu-list ul {
+  text-align: center;
+  padding: 0px;
+  margin: 0px; }
+
+nav.mob-menu-list li {
+  margin-bottom: 20px; }
+
+div.logo-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px; }
+  div.logo-wrapper img {
+    width: 60px;
+    height: 60px;
+    margin: 0px 20px; }
+
+div.exit {
+  display: flex;
+  justify-content: flex-end; }
+  div.exit img {
+    width: 30px;
+    height: 30px; }
+
+div.menu-footer {
+  background-color: #fcff19;
+  position: relative; }
+
+div.menu-burger {
+  display: none; }
+
 @media screen and (max-width: 800px) {
+  div.container {
+    display: none; }
+  div.menu {
+    display: block;
+    background-color: #000000;
+    position: relative;
+    bottom: 2px; }
+  div.menu-burger {
+    display: block;
+    display: flex;
+    justify-content: flex-end; }
+    div.menu-burger img {
+      padding: 15px; }
+  div#menu-wrapper {
+    display: none; }
   div#content-categories {
     justify-content: center; }
   div.item {
@@ -279,11 +379,37 @@ section#footer {
   section#popular-bikes {
     padding-top: 50px; }
   div#item-collections {
-    justify-content: center; } }
+    justify-content: center; }
+  div.item-bike {
+    width: 80%; }
+  div.item-price {
+    justify-content: space-around; }
+  div#form-contact-us {
+    margin: 0px 30px; }
+    div#form-contact-us input {
+      width: 100%; }
+  section#footer {
+    display: none; } }
 
-div#item-content-header {
+@media screen and (max-width: 500px) {
+  div.arrow-next {
+    display: none; }
+  div.arrow-previous {
+    display: none; }
+  div.item-pay {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%; }
+  div.item-price {
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    width: 95%; } }
+
+div.item-content-header {
   text-align: center; }
-  div#item-content-header h3 {
+  div.item-content-header h3 {
     font-family: MyriadProRegular;
     font-weight: normal;
     font-size: 28px;
@@ -307,7 +433,7 @@ section#categories h2 {
   padding: 75px 0px 75px 0px;
   font-size: 28px; }
 
-div#item-content-header span {
+div.item-content-header span {
   color: #fcff19; }
 
 div.item-group {

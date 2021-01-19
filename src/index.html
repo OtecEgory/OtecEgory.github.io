@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thebikeshop</title>
     <link rel="stylesheet" type="text/css" href="./styles/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
     <body>
-        <section id="header">
+        <section class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/PhotoFilter.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/BikeRoad.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/BikeJump.png" alt="">
+                </div>
+            </div>
             <div class="container-header">
+                <div class="menu">
+                    <div class="menu-burger">
+                        <img src="./icons/menu.svg" alt="">
+                    </div>
+                </div>
                 <div class="container">
                     <div id="menu-wrapper">
                         <img src="./icons/THE BIKE SHOP 2.svg" alt="">
@@ -38,7 +56,7 @@
                     <div class="arrow-previous">
                         <img src="./icons/LEFT_BUTTON_ACTIVE.svg" alt="">
                     </div>
-                    <div id="item-content-header">
+                    <div class="item-content-header">
                         <h1>HANDMADE BICYCLE</h1>
                         <h3>You <span>create</span> the <span>journey,</span> we supply the <span>parts.</span></h3>
                         <button>SHOP BIKES</button>
@@ -48,7 +66,7 @@
                     </div>
                 </div>
                 <div id="scroll-icon">
-                    <img src="./icons/Scroll_icon_active 1.svg" alt="">
+                    <img width="44px" src="./icons/down-arrow.svg" alt="">
                 </div>
             </div>
         </section>
@@ -87,7 +105,7 @@
                 <div>
                     <div id="item-collections">
                         <div class="item-bike">
-                            <img src="./images/ITEM_PHOTO.png" alt="">
+                            <img class="bike" src="./images/ITEM_PHOTO.png" alt="">
                             <div class="item-pay">
                                 <div class="item-price">
                                     <h2>fixed gear</h6>
@@ -103,7 +121,7 @@
                             </div>
                         </div>
                         <div class="item-bike">
-                            <img src="./images/ITEM_PHOTO_2.png" alt="">
+                            <img class="bike" src="./images/ITEM_PHOTO_2.png" alt="">
                             <div class="item-pay">
                                 <div class="item-price">
                                     <h2>big boy ultra</h6>
@@ -119,7 +137,7 @@
                             </div>
                         </div>
                         <div class="item-bike">
-                            <img src="./images/ITEM_PHOTO_3.png" alt="">
+                            <img class="bike" src="./images/ITEM_PHOTO_3.png" alt="">
                             <div class="item-pay">
                                 <div class="item-price">
                                     <h2>sanchaez</h6>
@@ -148,7 +166,7 @@
                     <input type="text" name="surname" placeholder="surname">
                 </div>
                 <input type="text" name="user@domain.com" placeholder="user@domain.com">
-                <textarea>Message</textarea>
+                <textarea placeholder="Message"></textarea>
                 <button>send</button>
             </div>
         </div>
@@ -166,6 +184,36 @@
                 </div>
             </div>
         </section>
+        <div class="mob-menu">
+            <div class="mob-container-menu">
+                <div class="exit">
+                    <img src="./icons/close.svg">
+                </div>
+                <nav class="mob-menu-list">
+                    <ul class="mob-menu-list">
+                        <li>
+                            <a href="#">Bicycles</a>
+                        </li>
+                        <li>
+                            <a href="#">Parts</a>
+                        </li>
+                        <li>
+                            <a href="#">Accessories</a>
+                        </li>
+                        <li>
+                            <a href="#">Extras</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="logo-wrapper">
+                    <img src="./icons/twitter.svg">
+                    <img src="./icons/github.svg">
+                    <img src="./icons/facebook.svg">
+                </div>
+            </div>
+        </div>
     </body>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../js/index.js"></script>
 </html>

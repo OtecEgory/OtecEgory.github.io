@@ -2,20 +2,28 @@ body
     margin: 0
     padding: 0
 
-section#header
-    background-image: url('../../images/PhotoFilter.png')
-    background-repeat: no-repeat
-    background-size: cover
+    *
+        box-sizing: border-box
 
 div.container
     margin: 0 auto
     max-width: 1200px
+    padding: 0px 15px
 
+div.swiper-container
+    position: relative
+
+
+div.swiper-slide img
+    height: 1000px
 
 div#menu-wrapper
     @include flex-between
     align-items: center
     padding-top: 20px
+
+div.menu-burger
+    display: none
 
 
 ul.menu-list
@@ -47,19 +55,22 @@ div.item-menu
 
 div.container-header
     margin: auto
-    max-width: 1875px
-    position: relative
+    position: absolute
+    z-index: 44
     height: 1000px
+    top: 50%
+    transform: translateY(-50%)
+    width: 100%
 
 
 div#header-content
     @include flex-between
     align-items: center
-    flex-wrap: wrap
     position: absolute
     width: 100%
     top: 50%
     transform: translateY(-50%)
+    padding: 0px 15px
 
 section#categories
     background-image: url('../../images/CATEGORIES_BG_IMAGE.png')
@@ -76,11 +87,19 @@ div#content-categories
     flex-wrap: wrap
     padding-bottom: 75px
 
+div.item-bike img.bike
+    width: 100%
+
 div.container-popular-bikes
     margin: auto
     max-width: 1875px
 
-section#popular-bikes h2
+
+
+section#popular-bikes
+    padding-top: 50px
+    
+    h2
     text-align: center
     text-transform: uppercase
     font-family: $font-roboto
@@ -96,7 +115,7 @@ div#item-collections
 
 div#scroll-icon
     position: absolute
-    bottom: 30px
+    bottom: 80px
     left: 50%
     transform: translateX(-50%)
 
@@ -145,9 +164,102 @@ section#footer
             &:nth-child(4)
                 padding-right: 0px
 
+div.mob-menu
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    left: 100%
+    bottom: 0
+    height: 100%
+    padding: 30px
+    background: #fff
+    border-left: 1px solid #000
+    width: 100%
+    transition: 0.4s
+    z-index: 100
+    overflow: hidden
+
+div.mob-menu.show
+    left: 0
+    padding: 0
+    background-color: #000000
+
+div.exit
+    display: flex
+    justify-content: flex-end
+    margin: 0px 20px 40px 0px
+    
+    img
+        width: 30px
+        height: 30px
+
+nav.mob-menu-list 
+    a
+        color: #fcff19
+        font-family: $font-roboto
+        @include font-style-family
+        font-size: 45px
+
+    ul
+        text-align: center
+        padding: 0px
+        margin: 0px
+
+    li
+        margin-bottom: 20px
+
+
+div.logo-wrapper
+    display: flex
+    justify-content: space-around
+    margin-top: 60px
+
+    img
+        width: 60px
+        height: 60px
+        margin: 0px 20px
+
+div.exit
+    display: flex
+    justify-content: flex-end
+    
+    img
+        width: 30px
+        height: 30px
+
+
+div.menu-footer
+    background-color:#fcff19
+    position: relative
+
+div.menu-burger
+    display: none
+
 
 
 @media screen and (max-width: 800px)
+
+    div.container
+        display: none
+
+    div.menu
+        display: block
+        background-color: #000000
+        position: relative
+        bottom: 2px
+
+    div.menu-burger
+        display: block
+        display: flex
+        justify-content: flex-end
+
+        img
+            padding: 15px
+
+
+    div#menu-wrapper
+        display: none
 
     div#content-categories
        justify-content: center
@@ -162,4 +274,37 @@ section#footer
     div#item-collections
         justify-content: center
 
-            
+    div.item-bike
+        width: 80%
+
+    div.item-price
+        justify-content: space-around
+
+    div#form-contact-us
+        margin: 0px 30px
+
+        input
+            width: 100%
+
+    section#footer
+        display: none
+
+
+@media screen and (max-width: 500px)
+
+    div.arrow-next
+        display: none
+
+    div.arrow-previous
+        display: none
+
+    div.item-pay
+        @include flex-center
+        flex-wrap: wrap
+        width: 100%
+
+    div.item-price
+        display: flex
+        padding: 10px
+        justify-content: space-around
+        width: 95%  
