@@ -9,7 +9,7 @@ var mySwiper = new Swiper('.swiper-container', {
   },
 })
 
-window.onload =  function() {
+window.onload = function() {
 
   let visible_menu = ('show')
   let openMenuBtn = document.querySelector('.menu-burger img')
@@ -31,4 +31,28 @@ window.onload =  function() {
   }
   removeElem(exit, menu, visible_menu)
 
+  let castomSelectHeads = document.querySelectorAll('.select-option .select-head')
+  let bodyItems = document.querySelectorAll('.select-option li')
+  
+  castomSelectHeads.forEach(item => {
+      item.addEventListener('click', event => {
+          let head = event.currentTarget
+          
+          head.nextElementSibling.classList.add('show')
+      })
+  })
+
+  bodyItems.forEach(item => {
+      item.addEventListener('click', event => {
+          let element = event.currentTarget
+          let value = element.innerHTML
+          let currentSelect = element.closest('.select-option')
+          let resultInput = currentSelect.querySelector('.result-inp')
+
+          resultInput.value = value
+          element.closest('.body').classList.remove('show')
+      })
+  })
+
+  let scrollBtn = document.getElementById('#scroll-icon img')
 }

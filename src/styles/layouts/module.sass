@@ -15,7 +15,9 @@ div.swiper-container
 
 
 div.swiper-slide img
-    height: 1000px
+    height: auto
+    // width: 100%
+
 
 div#menu-wrapper
     @include flex-between
@@ -113,7 +115,7 @@ div#item-collections
     padding-bottom: 34px
 
 
-div#scroll-icon
+div.scroll-icon
     position: absolute
     bottom: 80px
     left: 50%
@@ -179,6 +181,7 @@ div.mob-menu
     transition: 0.4s
     z-index: 100
     overflow: hidden
+    background-color: #000000
 
 div.mob-menu.show
     left: 0
@@ -291,6 +294,9 @@ div.menu-burger
 
 
 @media screen and (max-width: 500px)
+
+    div#header-content
+        transform: translateY(-100%)
 
     div.arrow-next
         display: none
