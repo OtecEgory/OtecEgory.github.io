@@ -22,14 +22,17 @@ button {
   height: 43px;
   outline: none;
   text-transform: uppercase;
-  font-size: 12px; }
+  font-size: 12px;
+  cursor: pointer; }
 
 div.arrow-next img {
+  cursor: pointer;
   transition: 0.3s; }
   div.arrow-next img:hover {
     filter: brightness(300%); }
 
 div.arrow-previous img {
+  cursor: pointer;
   transition: 0.3s; }
   div.arrow-previous img:hover {
     filter: brightness(300%); }
@@ -86,6 +89,7 @@ div.select-option {
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
     margin: 0px;
     padding-left: 20px; }
   div.select-option input::-webkit-input-placeholder {
@@ -295,6 +299,7 @@ div#item-collections {
 
 div.scroll-icon {
   position: absolute;
+  cursor: pointer;
   bottom: 80px;
   left: 50%;
   transform: translateX(-50%); }
