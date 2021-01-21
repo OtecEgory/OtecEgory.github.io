@@ -54,5 +54,14 @@ window.onload = function() {
       })
   })
 
-  let scrollBtn = document.getElementById('#scroll-icon img')
+  let scrollBtn = document.querySelector('.scroll-icon')
+  let section2 = document.querySelector('#categories').getBoundingClientRect()
+
+  function scrollDown(){
+    scrollBtn.addEventListener('click', ()=>{
+      window.scroll({top: section2.top, behavior: 'smooth'});
+    })
+  }
+  scrollDown()
+
 }
