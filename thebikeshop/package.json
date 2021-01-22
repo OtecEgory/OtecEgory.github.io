@@ -7,7 +7,7 @@
     "dev": "gulp serve",
     "build": "gulp build"
   },
-  "author": "",
+  "author": "Egor Antsyshkin",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.13",
