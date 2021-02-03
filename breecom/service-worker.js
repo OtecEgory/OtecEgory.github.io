@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.39fabc3d2a7314364c5051752292507e.js"
+  "precache-manifest.795ad892a1195b6bf8843fc05c85aa00.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "breecom"});
