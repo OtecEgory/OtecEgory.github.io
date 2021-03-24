@@ -123,7 +123,18 @@ window.onload = () => {
         }
         return itemsActive;
     }
+    
+    let allCompleted = () => {
+        let allItems = document.querySelectorAll('.edit');
 
+        document.querySelector('.completed-all').addEventListener('click', () =>{
+            allItems.forEach(element => {
+                element.classList.add('completed')
+            });
+            console.log(allItems)
+        })
+    }
+    allCompleted()
     //Метод удаления айтема из списка
     let deleteTodoItem = (event) => {
 

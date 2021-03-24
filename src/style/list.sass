@@ -1,8 +1,19 @@
 div#todo
     margin: 0 auto
     width: 600px
+
+    div.todo-input
+        position: relative
+
+    div.completed-all
+        position: absolute
+        bottom: 10px
+        left: 10px
+        cursor: pointer
+        z-index: 2
     
     input.new-todo
+        position: relative
         padding: 16px 16px 16px 60px
         box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%)
         border: none
@@ -28,7 +39,6 @@ li.item
 
 li.item.cloneShow
     display: block
-
 
 input.edit
     padding: 16px 16px 16px 60px
